@@ -8,6 +8,7 @@
 </head>
 <body>
     <h1>Login</h1>
+    <hr>
     <form action="/action_page.php" method="POST">
         <label for="email">Email</label>
         <input type="email" id="email" name="email"><br><br>
