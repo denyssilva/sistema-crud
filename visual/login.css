@@ -1,0 +1,26 @@
+body{
+    font-family: sans-serif, arial, helvetica;
+    font-size: x-large;
+}
+
+body .form{
+    text-align: center;
+    background-color: #009960;
+    margin: 10%;
+    padding: 2%;
+    border: 1px solid gray;
+}
+
+body .form button{
+    transition: 1s;
+    background-color: #009991;
+    padding: 15px 32px;
+    border: 1px solid black;
+}
+
+body .form button:hover{
+    transition: 1s;
+    background-color: #009960;
+    color: #fff;
+    border-color: #fff;
+}
