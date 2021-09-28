@@ -12,7 +12,7 @@
     <div class="form">
         <h1>Login</h1>
         <hr>
-        <form action="/action_page.php" method="POST">
+        <form action="home.php" method="POST">
             <label for="email">Email</label>
             <input type="email" id="email" name="email"><br><br>
 
