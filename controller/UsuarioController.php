@@ -7,7 +7,7 @@ include_once "../dao/UsuarioDAO.php";
 $u = new Usuario();
 $udao = new UsuarioDAO();
 
-// filtragem na
+// filtragem na variavel abaixo, feito para reforçar a segurança 
 $filtro = filter_input_array(INPUT_POST);
 
 if (isset($_POST['inserir'])) {
