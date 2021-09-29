@@ -7,7 +7,11 @@ echo "Tela de teste";
 
 
 
+
 /*
+
+
+*******************************************
 inserção
 
 $u = new Usuario();
@@ -16,4 +20,5 @@ $u->setEmail("maria@mail.com");
 $u->setSenha("123");
 
 UsuarioDAO::inserir($u);
+
 */

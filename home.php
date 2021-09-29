@@ -14,13 +14,13 @@
         <hr>
         <form action="./controller/UsuarioController.php" method="POST">
             <label for="nome">Nome</label>
-            <input type="nome" id="nome" name="nome"><br><br>
+            <input type="nome" id="nome" name="nome" required><br><br>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email"><br><br>
+            <input type="email" id="email" name="email" required><br><br>
 
             <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha"><br><br>
+            <input type="password" id="senha" name="senha" required><br><br>
 
             <button type="submit" name="inserir">Enviar</button>
         </form>
