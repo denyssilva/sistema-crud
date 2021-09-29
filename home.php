@@ -12,8 +12,8 @@
     <div class="form">
         <h1>Inserir</h1>
         <hr>
-        <form action="#" method="POST">
-            <label for="nome">Email</label>
+        <form action="./controller/UsuarioController.php" method="POST">
+            <label for="nome">Nome</label>
             <input type="nome" id="nome" name="nome"><br><br>
 
             <label for="email">Email</label>
@@ -22,7 +22,7 @@
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha"><br><br>
 
-            <button type="submit">Enviar</button>
+            <button type="submit" name="inserir">Enviar</button>
         </form>
     </div>
 
