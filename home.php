@@ -50,7 +50,10 @@ include_once "./conn/Conn.php";
                     <td> <?= $u->getNome() ?></td> 
                     <td> <?= $u->getEmail() ?></td> 
                     <td> <?= $u->getSenha() ?></td> 
-                    <td>botoes de op</td>
+                    <td>
+                        <button id="alterar">Alterar</button>
+                        <button id="excluir">Excluir</button>
+                    </td>
                 </tr>
                 <?php endforeach ?>
             </tbody>
@@ -64,4 +67,19 @@ include_once "./conn/Conn.php";
     table, th, td {
         border:1px solid black;
     }
+
+    button{
+        margin:auto;
+    }
+
+    button#excluir{
+        color: white;
+        background-color: red;
+    }
+    
+    button#alterar{
+        color: black;
+        background-color: yellow;
+    }
+
 </style>
