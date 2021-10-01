@@ -9,6 +9,18 @@
 </head>
 <body>
 
+<?php
+
+include_once "./dao/UsuarioDAO.php";
+include_once "./model/Usuario.php";
+
+$u = new Usuario();
+$udao = new UsuarioDAO();
+
+include_once "./conn/Conn.php";
+
+?>
+
     <div class="form">
         <h1>Inserir</h1>
         <hr>
@@ -26,5 +38,40 @@
         </form>
     </div>
 
+    <hr>
+
+    <div>
+        <table style="width: 90%;">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Senha</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody> 
+                <?php
+                    foreach ($udao->lerTodos() as $u) : 
+                ?>
+                <tr>
+                    <td> <?= $u->getId() ?></td>
+                    <td> <?= $u->getNome() ?></td> 
+                    <td> <?= $u->getEmail() ?></td> 
+                    <td> <?= $u->getSenha() ?></td> 
+                    <td>botoes de op</td>
+                </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
+
+<style>
+    table, th, td {
+        border:1px solid black;
+    }
+</style>

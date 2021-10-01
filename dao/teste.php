@@ -5,11 +5,24 @@ require_once "../dao/UsuarioDAO.php";
 
 echo "Tela de teste";
 
+$u = new Usuario();
+$x = UsuarioDAO::lerTodos();
+
+echo "<pre>";
+    print_r($x);
+echo "</pre";
 
 
 
 /*
+*******************************************
+atualização
+$u = new Usuario();
+$x = UsuarioDAO::lerTodos();
 
+echo "<pre>";
+    print_r($x);
+echo "</pre";
 
 *******************************************
 inserção
@@ -20,5 +33,5 @@ $u->setEmail("maria@mail.com");
 $u->setSenha("123");
 
 UsuarioDAO::inserir($u);
-
+*******************************************
 */
