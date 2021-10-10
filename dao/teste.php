@@ -1,9 +1,9 @@
 <?php
-
+require_once '../conn/Conn.php';
 require_once "../model/Usuario.php";
 require_once "../dao/UsuarioDAO.php";
 
-echo "Tela de teste";
+echo "Tela de teste".PHP_EOL;
 
 $u = new Usuario();
 $x = UsuarioDAO::lerTodos();
@@ -17,6 +17,7 @@ echo "</pre";
 /*
 *******************************************
 atualização
+echo "Atualização".PHP_EOL;
 $u = new Usuario();
 $x = UsuarioDAO::lerTodos();
 
@@ -26,6 +27,7 @@ echo "</pre";
 
 *******************************************
 inserção
+echo "Inserção".PHP_EOL;
 
 $u = new Usuario();
 $u->setNome("maria");

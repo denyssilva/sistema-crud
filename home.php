@@ -51,8 +51,8 @@ include_once "./conn/Conn.php";
                     <td> <?= $u->getEmail() ?></td> 
                     <td> <?= $u->getSenha() ?></td> 
                     <td>
-                        <button id="alterar">Alterar</button>
-                        <button id="excluir">Excluir</button>
+                        <button id="alterar" onclick="">Alterar</button>
+                        <button id="excluir" onclick="alert('Deseja excluir o item? <?= $u->getId() ?>')">Excluir</button>
                     </td>
                 </tr>
                 <?php endforeach ?>

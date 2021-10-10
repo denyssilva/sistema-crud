@@ -20,6 +20,18 @@ class UsuarioDAO{
         }
         
     }
+    
+    public static function remover($id){
+        try {
+            $sql = "DELETE FROM usuario WHERE id=:id ROW LIMIT 1";
+            $p_sql = Conn::getConexao()->prepare($sql);
+            return $p_sql->execute();
+
+        } catch (Exception $e) {
+            print "Erro!!!: Nao foi possivel remover usuario.".PHP_EOL."$e".PHP_EOL;
+        }
+        
+    }
 
     // lerTodos() e listarUsuarios() andam juntas
     public static function lerTodos(){
@@ -30,13 +42,13 @@ class UsuarioDAO{
             $lista = $result->fetchAll(PDO::FETCH_ASSOC);
             $for_lista = array();
 
-            foreach ($lista as $l) {
+            foreach ($lista as $l) {        
                 $for_lista[] = self::listaUsuarios($l);
             }
                 return $for_lista;
                 
         } catch (Exception $e) {
-                echo "Erro ao deletar usuario.<br> $e <br>";
+                echo "Erro ao listar usuario.".PHP_EOL."$e".PHP_EOL;
         }
         
     }
