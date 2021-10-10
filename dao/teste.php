@@ -6,11 +6,7 @@ require_once "../dao/UsuarioDAO.php";
 echo "Tela de teste".PHP_EOL;
 
 $u = new Usuario();
-$x = UsuarioDAO::lerTodos();
-
-echo "<pre>";
-    print_r($x);
-echo "</pre";
+$x = UsuarioDAO::remover(1);
 
 
 

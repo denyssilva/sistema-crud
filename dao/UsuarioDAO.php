@@ -23,7 +23,7 @@ class UsuarioDAO{
     
     public static function remover($id){
         try {
-            $sql = "DELETE FROM usuario WHERE id=:id ROW LIMIT 1";
+            $sql = "DELETE FROM usuario WHERE id = $id LIMIT 1";
             $p_sql = Conn::getConexao()->prepare($sql);
             return $p_sql->execute();
 
