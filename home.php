@@ -66,6 +66,7 @@ include_once "./conn/Conn.php";
 <style>
     table, th, td {
         border:1px solid black;
+        background-color: #ccc;
     }
 
     button{
