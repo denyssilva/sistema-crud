@@ -16,13 +16,22 @@ if (isset($_POST['inserir'])) {
     $u->setSenha($filtro['senha']);
 
     $udao->inserir($u);
-    header("Location: ../");
+    header("Location: ../home.php");
 }
 
-elseif (isset($_POST['remover'])) {
-    # code...
+
+// remover
+elseif (isset($_GET['rem'])) {
+    $u->setId($_GET['rem']);
+    $udao->remover($u);
+    header("Location: ../home.php");
 }
 
 elseif (isset($_POST['atualizar'])) {
     # code...
 }
+
+else{
+    header("Location: ../home.php");
+}
+

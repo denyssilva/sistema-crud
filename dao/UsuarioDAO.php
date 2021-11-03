@@ -21,10 +21,11 @@ class UsuarioDAO{
         
     }
     
-    public static function remover($id){
+    public static function remover(Usuario $u){
         try {
-            $sql = "DELETE FROM usuario WHERE id = $id LIMIT 1";
+            $sql = "DELETE FROM usuario WHERE id = :id LIMIT 1";
             $p_sql = Conn::getConexao()->prepare($sql);
+            $p_sql->bindValue(":id", $u->getId());
             return $p_sql->execute();
 
         } catch (Exception $e) {

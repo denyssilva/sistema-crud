@@ -11,6 +11,28 @@ include_once "./conn/Conn.php";
 
 ?>
 
+    <style>
+        table, th, td {
+            border:1px solid black;
+            background-color: #ccc;
+        }
+
+        button{
+            margin:auto;
+        }
+
+        button#excluir{
+            color: white;
+            background-color: red;
+        }
+        
+        button#alterar{
+            color: black;
+            background-color: yellow;
+        }
+
+    </style>
+
     <div class="form">
         <h1>Inserir</h1>
         <hr>
@@ -52,8 +74,9 @@ include_once "./conn/Conn.php";
                     <td> <?= $u->getSenha() ?></td> 
                     <td>
                         <button id="alterar" onclick="">Alterar</button>
-                        <button id="excluir" onclick="alert('Deseja excluir o item? <?= $u->getId() ?>')">Excluir</button>
+                        <button id="excluir"  onclick="deleteUsuario(<?= $u->getId() ?>)">Excluir</button>
                     </td>
+
                 </tr>
                 <?php endforeach ?>
             </tbody>
@@ -63,24 +86,16 @@ include_once "./conn/Conn.php";
 </body>
 </html>
 
-<style>
-    table, th, td {
-        border:1px solid black;
-        background-color: #ccc;
+<script>
+    function deleteUsuario(id) {
+        var op = confirm(`Deseja excluir?`+ id);
+        if (op === true) {
+            excluir(id);
+        }
     }
 
-    button{
-        margin:auto;
+    function excluir(id){
+        window.location='./controller/UsuarioController.php?rem='+id;
     }
+</script>
 
-    button#excluir{
-        color: white;
-        background-color: red;
-    }
-    
-    button#alterar{
-        color: black;
-        background-color: yellow;
-    }
-
-</style>
