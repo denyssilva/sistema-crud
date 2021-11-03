@@ -23,12 +23,18 @@ if (isset($_POST['inserir'])) {
 // remover
 elseif (isset($_GET['rem'])) {
     $u->setId($_GET['rem']);
+
     $udao->remover($u);
     header("Location: ../home.php");
 }
 
 elseif (isset($_POST['atualizar'])) {
-    # code...
+    $u->setNome($filtro['nome']);
+    $u->setEmail($filtro['email']);
+    $u->setSenha($filtro['senha']);
+
+    $udao->atualizar($u);
+    header("Location: ../home.php");
 }
 
 else{

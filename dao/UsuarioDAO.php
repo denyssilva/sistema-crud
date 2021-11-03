@@ -34,6 +34,30 @@ class UsuarioDAO{
         
     }
 
+    public static function atualizar(Usuario $u){
+
+        try {
+            $sql = "UPDATE FROM usuario SET
+            nome=:nome,
+            email=:email,
+            senha=:senha
+            WHERE id=:id LIMIT 1";
+
+            $p_sql = Conn::getConexao()->prepare($sql);
+
+            $p_sql->bindValue(':nome',$u->nome);
+            $p_sql->bindValue(':email',$u->email);
+            $p_sql->bindValue(':senha',$u->senha);
+            $p_sql->bindValue(':id', $u->id);
+
+            $p_sql->execute();
+
+        } catch (Exception $e) {
+            echo "Não foi possivel alterar" . $e->getMessage();
+        }
+
+    }
+
     // lerTodos() e listarUsuarios() andam juntas
     public static function lerTodos(){
 
