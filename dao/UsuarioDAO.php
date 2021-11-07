@@ -88,4 +88,23 @@ class UsuarioDAO{
         return $u;
     }
 
+    public static function pegarUsuario($id){
+        try{
+            $sql = "SELECT * FROM usuario WHERE id=:id LIMIT 1";
+            $p_sql = Conn::getConexao()->prepare($sql);
+            $p_sql->bindValue(":id", $id);
+            $p_sql->execute();
+            $count = $p_sql->rowCount();
+
+            if($count===1){
+                return TRUE;
+            } else{
+                return FALSE;
+            }
+        }        
+        catch(Exception $e ){
+            echo "erro: nao foi possivel selecionar. ".$e->getMessage();
+        }
+    }
+
 }

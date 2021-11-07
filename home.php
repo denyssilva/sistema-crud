@@ -26,7 +26,7 @@ include_once "./conn/Conn.php";
             background-color: red;
         }
         
-        button#alterar{
+        button#atualizar{
             color: black;
             background-color: yellow;
         }
@@ -73,8 +73,8 @@ include_once "./conn/Conn.php";
                     <td> <?= $u->getEmail() ?></td> 
                     <td> <?= $u->getSenha() ?></td> 
                     <td>
-                        <button id="alterar" onclick="">Alterar</button>
-                        <button id="excluir"  onclick="deleteUsuario(<?= $u->getId() ?>)">Excluir</button>
+                        <button id="atualizar" onclick="alterarUsuario(<?= $u->getId() ?>)">atualizar</button>
+                        <button id="excluir"  onclick="deletarUsuario(<?= $u->getId() ?>)">Excluir</button>
                     </td>
 
                 </tr>
@@ -87,15 +87,20 @@ include_once "./conn/Conn.php";
 </html>
 
 <script>
-    function deleteUsuario(id) {
+
+    function deletarUsuario(id) {
         var op = confirm(`Deseja excluir?`+ id);
         if (op === true) {
-            excluir(id);
+            window.location='./controller/UsuarioController.php?rem='+id;
+        }
+    }
+    
+    function alterarUsuario(id) {
+        var op = confirm(`Deseja alterar?`+ id);
+        if (op === true) {
+            window.location='./alterar.php?id='+id;
         }
     }
 
-    function excluir(id){
-        window.location='./controller/UsuarioController.php?rem='+id;
-    }
 </script>
 
