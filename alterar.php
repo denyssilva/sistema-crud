@@ -26,8 +26,9 @@ if (isset($_GET['id'])){
             <label for="nome">Senha</label>
             <input type="text" id="nome" name="nome" value="<?php echo $u->getSenha(); ?>"><br><br>
 
-            <button type="submit" name="inserir">Enviar</button>
+            <button type="submit" name="inserir">Enviar</button> |
+            <button type="submit" name="cancelar" style="background:red; color:white" onclick="">Cancelar</button> 
+
         </form>
     </div>
-
 
