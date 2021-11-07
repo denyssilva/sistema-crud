@@ -107,4 +107,32 @@ class UsuarioDAO{
         }
     }
 
+    public static function getById($id){
+        try{
+            $sql = "SELECT * FROM usuario WHERE id=:id LIMIT 1";
+            $p_sql = Conn::getConexao()->prepare($sql);
+            $p_sql->bindValue(":id", $id);
+            $p_sql->execute();
+            $dados = $p_sql->fetch(PDO::FETCH_OBJ);
+            //print_r($p_sql); 
+            if ($dados != null) {
+                return self::popularObjeto($dados);
+            } else{ 
+                return "objeto nullo";
+            }
+        }        
+        catch(Exception $e ){
+            echo "erro: nao foi possivel selecionar. ".$e->getMessage();
+        }
+    }
+
+    private static function popularObjeto($dados) {
+        $u = new Usuario();
+        $u->setId($dados->id);
+        $u->setNome($dados->nome);
+        $u->setEmail($dados->email);
+        $u->setSenha($dados->senha);
+        return $u;
+    }
+
 }

@@ -1,14 +1,16 @@
 <?php
-include_once "./visual/cab.php";
+require_once "./visual/cab.php";
 
-include_once "./dao/UsuarioDAO.php";
-include_once "./model/Usuario.php";
-include_once "./conn/Conn.php";
+require_once "./model/Usuario.php";
+require_once "./conn/Conn.php";
 
 $u = new Usuario();
-$udao = new UsuarioDAO();
-$udao->pegarUsuario(3);
+//$u = UsuarioDAO::getById($_GET['id']);
 
+if (isset($_GET['id'])){
+    require_once './dao/UsuarioDAO.php';
+    $u = UsuarioDAO::getById($_GET['id']);
+}
 
 ?>
     <div class="form">  
@@ -18,8 +20,11 @@ $udao->pegarUsuario(3);
             
 
             <label for="nome">Nome</label>
-            <input type="nome" id="nome" name="nome" required
-            value="<?php echo $u->getNome(); ?>"><br><br>
+            <input type="text" id="nome" name="nome" value="<?php echo $u->getNome(); ?>"><br><br>
+            <label for="nome">Email</label>
+            <input type="mail" id="email" name="email" value="<?php echo $u->getEmail(); ?>"><br><br>
+            <label for="nome">Senha</label>
+            <input type="text" id="nome" name="nome" value="<?php echo $u->getSenha(); ?>"><br><br>
 
             <button type="submit" name="inserir">Enviar</button>
         </form>
