@@ -45,10 +45,10 @@ class UsuarioDAO{
 
             $p_sql = Conn::getConexao()->prepare($sql);
 
-            $p_sql->bindValue(':nome',$u->nome);
-            $p_sql->bindValue(':email',$u->email);
-            $p_sql->bindValue(':senha',$u->senha);
-            $p_sql->bindValue(':id', $u->id);
+            $p_sql->bindValue(':nome',$u->getNome());
+            $p_sql->bindValue(':email',$u->getEmail());
+            $p_sql->bindValue(':senha',$u->getSenha());
+            $p_sql->bindValue(':id', $u->getId());
 
             $p_sql->execute();
 

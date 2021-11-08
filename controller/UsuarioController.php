@@ -33,7 +33,9 @@ elseif (isset($_POST['atualizar'])) {
     $u->setNome($filtro['nome']);
     $u->setEmail($filtro['email']);
     $u->setSenha($filtro['senha']);
+    $u->setId($filtro['id']);
 
+    //print_r($u);
     $udao->atualizar($u);
     header("Location: ../home.php");
 }

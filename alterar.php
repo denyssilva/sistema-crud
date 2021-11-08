@@ -16,18 +16,18 @@ if (isset($_GET['id'])){
     <div class="form">  
         <h1>Atualizar usuario</h1>
         <hr>
-        <form action="" method="POST">
-            
+        <form action="./controller/UsuarioController.php" method="POST">
 
             <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" value="<?php echo $u->getNome(); ?>"><br><br>
             <label for="nome">Email</label>
             <input type="mail" id="email" name="email" value="<?php echo $u->getEmail(); ?>"><br><br>
             <label for="nome">Senha</label>
-            <input type="text" id="nome" name="nome" value="<?php echo $u->getSenha(); ?>"><br><br>
+            <input type="text" id="senha" name="senha" value="<?php echo $u->getSenha(); ?>"><br><br>
+            <input type="hidden" name="id" value="<?= $u->getId() ?>" />
 
-            <button type="submit" name="inserir">Enviar</button> |
-            <button type="submit" name="cancelar" style="background:red; color:white" onclick="">Cancelar</button> 
+            <button type="submit" name="atualizar">Enviar</button> |
+            <button type="submit" name="" style="background:red; color:white">Cancelar</button> 
 
         </form>
     </div>
