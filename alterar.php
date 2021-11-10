@@ -24,7 +24,7 @@ if (isset($_GET['id'])){
             <input type="mail" id="email" name="email" value="<?php echo $u->getEmail(); ?>"><br><br>
             <label for="nome">Senha</label>
             <input type="text" id="senha" name="senha" value="<?php echo $u->getSenha(); ?>"><br><br>
-            <input type="hidden" name="id" value="<?= $u->getId() ?>" />
+            <input type="hidden" id="id" name="id" value="<?= $u->getId() ?>" />
 
             <button type="submit" name="atualizar">Enviar</button> |
             <button type="submit" name="" style="background:red; color:white">Cancelar</button> 
