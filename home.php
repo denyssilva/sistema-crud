@@ -1,8 +1,7 @@
 <?php
-include_once "./visual/cab.php";
-
-include_once "./dao/UsuarioDAO.php";
-include_once "./model/Usuario.php";
+require_once $_SERVER['DOCUMENT_ROOT'].'/sistema-crud/visual/cab.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/sistema-crud/dao/UsuarioDAO.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/sistema-crud/model/Usuario.php';
 
 $u = new Usuario();
 $udao = new UsuarioDAO();

@@ -1,5 +1,7 @@
 <?php
-include_once "./visual/cab.php";
+
+require_once $_SERVER['DOCUMENT_ROOT'].'/sistema-crud/visual/cab.php';
+
 ?>
 
     <div class="form">
@@ -15,6 +17,8 @@ include_once "./visual/cab.php";
             <button type="submit">Enviar</button>
         </form>
     </div>
+
+    
 
 </body>
 </html>

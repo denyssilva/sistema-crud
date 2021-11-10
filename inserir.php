@@ -1,11 +1,9 @@
 <?php
-require_once "./visual/cab.php";
-
-require_once "./model/Usuario.php";
-require_once "./conn/Conn.php";
+require_once  $_SERVER['DOCUMENT_ROOT'].'/sistema-crud/visual/cab.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/sistema-crud/model/Usuario.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/sistema-crud/conn/Conn.php';
 
 $u = new Usuario();
-//$u = UsuarioDAO::getById($_GET['id']);
 
 ?>
 
