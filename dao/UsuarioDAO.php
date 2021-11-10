@@ -37,19 +37,18 @@ class UsuarioDAO{
     public static function atualizar(Usuario $u){
 
         try {
-            $sql = "UPDATE FROM usuario SET
+            $sql = "UPDATE usuario SET
             nome=:nome,
             email=:email,
             senha=:senha
-            WHERE id=:id LIMIT 1";
+            WHERE id=:id";
 
             $p_sql = Conn::getConexao()->prepare($sql);
 
-            $p_sql->bindValue(':nome',$u->getNome());
-            $p_sql->bindValue(':email',$u->getEmail());
-            $p_sql->bindValue(':senha',$u->getSenha());
-            $p_sql->bindValue(':id', $u->getId());
-
+            $p_sql->bindValue(":nome",$u->getNome());
+            $p_sql->bindValue(":email",$u->getEmail());
+            $p_sql->bindValue(":senha",$u->getSenha());
+            $p_sql->bindValue(":id", $u->getId());
             $p_sql->execute();
 
         } catch (Exception $e) {
