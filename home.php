@@ -40,6 +40,9 @@ include_once "./conn/Conn.php";
 
     <a href="./inserir.php">
         <button id="inserir">Inserir</button>
+    </a> 
+    <a href="#">
+        <button id="excluir">Sair</button>
     </a>
 
     <hr>
